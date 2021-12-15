@@ -1,0 +1,10 @@
+{{#if productos.length}}
+{{#each productos}}
+<ul class="list-group" style="width:500px;margin-top: 10px;">
+    <li class="list-group-item list-group-item-success"><img class="rounded mx-auto d-block" style="width: 200px;" src="{{this.thumbnail}}" alt=""></li>
+    <li class="list-group-item list-group-item-success">Producto: {{this.title}}</li>
+    <li class="list-group-item list-group-item-success">precio: {{this.price}}</li>
+    <li class="list-group-item list-group-item-success">id: {{this.id}}</li>
+</ul>
+{{/each}}
+{{/if}}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASE 12</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+        integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1 style="text-align: center;">AGREGAR PRODUCTO</h1>
+
+            <form id="nuevoProducto" style="width: 500px;margin-left: 32%;">
+                <div class="form-group">
+                    <label for="nombre">nombre del producto</label>
+                    <input id="nombre" class="form-control" type="text" name="title">
+                </div>
+                
+                <div class="form-group">
+                    <label for="precio">precio</label>
+                    <input id="precio" class="form-control" type="number" name="price">
+                </div>
+                
+                <div class="form-group">
+                    <label for="foto">foto</label>
+                    <input id="foto" class="form-control" type="text" name="thumbnail">
+                </div>
+                <button class="btn btn-success">Agregar productos</button>
+            </form>
+            <h2 style="text-align:center;">PRODUCTOS</h2>
+            <div id="productos" style="margin-left: 32%;"></div>
+        </div>
+
+
+        <div style="width: 500px;margin: 20px 0px 20px 32%; background-color: beige;">
+            <h1 style="text-align: center;">CHAT</h1>
+            <div id="mensajes"></div>
+            <form onsubmit="return addMessage(this)">
+              <div class="form-group">
+                <input type="text" id="email" placeholder="cual es tu mail" oninput="activar()">
+                <input disabled type="text" id="texto" placeholder="escribe un mensaje">
+                <input disabled type="submit" id="boton" value="Enviar!" class="btn btn-success">
+              </div>
+            </form>
+          </div>
+        
+          <script>
+            function activar(){
+              document.getElementById('texto').disabled=false
+              document.getElementById('boton').disabled=false
+            }
+          </script>
+    </div>
+
+    <script src="socket/socket.js"></script>
+
+</body>
+
+</html>
